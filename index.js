@@ -30,7 +30,7 @@ http.createServer(function(req, response) {
         if (cookies['LIAccess_token']){
             // STEP 3 - Get LinkedIn API Data
             // console.log("we have the cookie value" + cookies['LIAccess_token']);
-            OauthStep3(req, response, cookies['LIAccess_token'], APICalls['myJobSuggestions']);
+            OauthStep3(req, response, cookies['LIAccess_token'], APICalls['myProfile']);
 
         } else {
             var queryObject = url.parse(req.url, true).query;
@@ -108,7 +108,7 @@ var OauthStep2 = function(request, response, code) {
                 'Set-Cookie':'LIAccess_token=' + access_token + '; Expires=' + ExpiresIn29days
             });
 
-            OauthStep3(request, response, access_token, APICalls['myJobSuggestions']);
+            OauthStep3(request, response, access_token, APICalls['myProfile']);
         });
     });
 
