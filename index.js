@@ -151,8 +151,6 @@ var OauthStep3 = function(request, response, access_token, APICall, callback) {
 
         res.on('data', function(d) {
             // We have LinkedIn data!  Process it and continue with your application here
-            // apiResponse =JSON.parse(d)
-            // response.write(d);
             console.log(d);
             const jsonResponse = JSON.parse(d);
             const queryFields =jsonResponse.positions.values[0].company.industry.replace(/[^a-zA-Z ]/g, '').replace(/\s\s+/g, ' ').split(' ').join('+');
@@ -175,8 +173,9 @@ var OauthStep3 = function(request, response, access_token, APICall, callback) {
             setTimeout(() => {
                 data = JSON.parse(data).slice(0,10);
                 let emailText = '';
+                let counter = 1;
                 data.forEach((job) => {
-                    emailText += job.company + ' ' + job.title + ' ' + 'Description: ' + job.description + ' URL: ' + job.url + '\n\n';
+                    emailText += counter++ + '. ' + 'Company: ' + job.company + ' ' + 'Job Title: ' + job.title + ' ' + 'Description: ' + job.description + ' ' + 'URL: ' + job.url + '\n\n';
                 });
                 var mailOptions = {
                     from: 'autojobberhahaha@gmail.com',
