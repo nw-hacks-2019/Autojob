@@ -15,3 +15,6 @@ server.listen(port, (err) => {
 
     console.log(`server is listening on ${port}`)
 })
+
+// LinkedIn OAuth
+var Linkedin = require('node-linkedin')('app-id', 'secret');
