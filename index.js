@@ -163,7 +163,12 @@ var OauthStep3 = function(request, response, access_token, APICall, callback) {
                 });
 
                 response.on('end', () => {
-                    console.log(JSON.parse(data));
+                    var displayData = '';
+                    data = JSON.parse(data);
+                    displayData += data[0].company + ' ' + data[0].title
+                        + ', ' + data[1].company + ' ' + data[1].title + ', '
+                        + data[2].company + ' ' + data[2].title;
+                    console.log(displayData);
                 });
             });
             request.end();
