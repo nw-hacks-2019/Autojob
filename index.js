@@ -108,7 +108,7 @@ var OauthStep2 = function(request, response, code) {
                 'Set-Cookie':'LIAccess_token=' + access_token + '; Expires=' + ExpiresIn29days
             });
 
-            OauthStep3(request, response, access_token, APICalls['myProfile']);
+            OauthStep3(request, response, access_token, APICalls['myJobSuggestions']);
         });
     });
 
