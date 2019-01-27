@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02b89e33-2cfa-47cf-b47b-a22313613aa1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -36,6 +32,7 @@
           <entry key="js" value="1" />
           <entry key="json" value="4" />
           <entry key="md" value="1" />
+          <entry key="ts" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -43,19 +40,20 @@
           <entry key="JSON" value="4" />
           <entry key="JavaScript" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
+          <entry key="TypeScript" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="30" />
-          <entry key="js" value="326" />
+          <entry key="js" value="1628" />
           <entry key="json" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="40" />
-          <entry key="JavaScript" value="326" />
+          <entry key="JavaScript" value="1628" />
           <entry key="PLAIN_TEXT" value="30" />
         </counts>
       </usages-collector>
@@ -63,16 +61,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="50" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="50" />
+            <state relative-caret-position="405">
+              <caret line="170" column="45" selection-start-line="170" selection-start-column="45" selection-end-line="170" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/secret.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
@@ -94,8 +92,14 @@
     <findStrings>
       <find>3000</find>
       <find>callback</find>
-      <find>86lpt503oft8dl</find>
       <find>1337</find>
+      <find>86lpt503oft8dl</find>
+      <find>response</find>
+      <find>apicalls</find>
+      <find>myProfile</find>
+      <find>myjobsugg</find>
+      <find>explanation</find>
+      <find>hosturl</find>
     </findStrings>
     <replaceStrings>
       <replace>1337</replace>
@@ -115,8 +119,8 @@
       <list>
         <option value="$PROJECT_DIR$/java_legacy/index.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/secret.json" />
+        <option value="$PROJECT_DIR$/index.js" />
       </list>
     </option>
   </component>
@@ -160,6 +164,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../../CPSC210-Android-SDK/android-sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -256,15 +261,16 @@
       <option name="presentableId" value="Default" />
       <updated>1548553077423</updated>
       <workItem from="1548558819115" duration="965000" />
-      <workItem from="1548561401349" duration="2926000" />
+      <workItem from="1548561401349" duration="4290000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4088000" />
+    <option name="totallyTimeSpent" value="9224000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22128259" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -321,17 +327,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="50" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/secret.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="14044" column="26" lean-forward="true" selection-start-line="14044" selection-start-column="26" selection-end-line="14044" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="170" column="45" selection-start-line="170" selection-start-column="45" selection-end-line="170" selection-end-column="45" />
         </state>
       </provider>
     </entry>
