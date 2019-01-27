@@ -116,7 +116,7 @@ var OauthStep2 = function(request, response, code) {
         console.error("There was an error with our Oauth Call in Step 2: " + e);
         response.end("There was an error with our Oauth Call in Step 2");
     });
-    req.end();å
+    req.end();
 };
 
 //////////////////////////////////////////////////////////////
@@ -145,9 +145,34 @@ var OauthStep3 = function(request, response, access_token, APICall, callback) {
         res.on('data', function(d) {
             // We have LinkedIn data!  Process it and continue with your application here
             // apiResponse =JSON.parse(d)
-            response.end(d);
+            // response.write(d);
             console.log(d);
-            // TODO
+            const jsonResponse = JSON.parse(d);
+            const queryFields =jsonResponse.positions.values[0].company.industry.replace(/[^a-zA-Z ]/g, '').replace(/\s\s+/g, ' ').split(' ').join('+');
+            // const locationFields = jsonResponse.location.name.replace(/[^a-zA-Z ]/g, '').replace(/\s\s+/g, ' ').split(' ').join('+');
+            console.log('https://jobs.github.com/positions.json?description=' + queryFields + '&location=');
+                // + locationFields);
+            var displayData = '';
+            let data = '';
+            const request = https.request('https://jobs.github.com/positions.json?description=' + queryFields,
+                // + '&location=' + locationFields,
+            function(response) {
+
+                // A chunk of data has been recieved.
+                response.on('data', (chunk) => {
+                    data += chunk;
+                })
+
+            });
+            // console.log('write');
+            setTimeout(() => {
+                data = JSON.parse(data);
+                displayData += data[0].company + ' ' + data[0].title
+                    + ', ' + data[1].company + ' ' + data[1].title + ', '
+                    + data[2].company + ' ' + data[2].title;
+                response.end(displayData);
+            }, 4000);
+            request.end();
         });
     });
 
@@ -164,7 +189,7 @@ var OauthStep3 = function(request, response, access_token, APICall, callback) {
 var APICalls = [];
 
 // My Profile and My Data APIS
-APICalls['myProfile'] = 'people/~:(first-name,last-name,headline,summary,public-profile-url)';
+APICalls['myProfile'] = 'people/~:(first-name,last-name,headline,summary,location,positions,public-profile-url)';
 APICalls['myConnections'] = 'people/~/connections';
 APICalls['myNetworkShares'] = 'people/~/shares';
 APICalls['myNetworksUpdates'] = 'people/~/network/updates';
