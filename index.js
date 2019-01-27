@@ -30,7 +30,7 @@ http.createServer(function(req, response) {
         if (cookies['LIAccess_token']){
             // STEP 3 - Get LinkedIn API Data
             // console.log("we have the cookie value" + cookies['LIAccess_token']);
-            OauthStep3(req, response, cookies['LIAccess_token'], APICalls['myProfile']);
+            OauthStep3(req, response, cookies['LIAccess_token'], APICalls['myJobSuggestions']);
 
         } else {
             var queryObject = url.parse(req.url, true).query;
@@ -116,7 +116,7 @@ var OauthStep2 = function(request, response, code) {
         console.error("There was an error with our Oauth Call in Step 2: " + e);
         response.end("There was an error with our Oauth Call in Step 2");
     });
-    req.end();
+    req.end();å
 };
 
 //////////////////////////////////////////////////////////////
