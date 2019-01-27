@@ -147,7 +147,26 @@ var OauthStep3 = function(request, response, access_token, APICall, callback) {
             // apiResponse =JSON.parse(d)
             response.end(d);
             console.log(d);
-            // TODO
+            const jsonResponse = JSON.parse(d);
+            const queryFields =jsonResponse.positions.values[0].company.industry.replace(/[^a-zA-Z ]/g, '').replace(/\s\s+/g, ' ').split(' ').join('+');
+            // const locationFields = jsonResponse.location.name.replace(/[^a-zA-Z ]/g, '').replace(/\s\s+/g, ' ').split(' ').join('+');
+            console.log('https://jobs.github.com/positions.json?description=' + queryFields + '&location=');
+                // + locationFields);
+            const request = https.request('https://jobs.github.com/positions.json?description=' + queryFields,
+                // + '&location=' + locationFields,
+            function(response) {
+                let data = '';
+
+                // A chunk of data has been recieved.
+                response.on('data', (chunk) => {
+                    data += chunk;
+                });
+
+                response.on('end', () => {
+                    console.log(JSON.parse(data));
+                });
+            });
+            request.end();
         });
     });
 
@@ -164,7 +183,7 @@ var OauthStep3 = function(request, response, access_token, APICall, callback) {
 var APICalls = [];
 
 // My Profile and My Data APIS
-APICalls['myProfile'] = 'people/~:(first-name,last-name,headline,summary,public-profile-url)';
+APICalls['myProfile'] = 'people/~:(first-name,last-name,headline,summary,location,positions,public-profile-url)';
 APICalls['myConnections'] = 'people/~/connections';
 APICalls['myNetworkShares'] = 'people/~/shares';
 APICalls['myNetworksUpdates'] = 'people/~/network/updates';
