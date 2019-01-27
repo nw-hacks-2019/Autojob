@@ -3,7 +3,14 @@ var http = require('http');
 var https = require('https');
 var fs = require('fs');
 var url = require('url');
-
+var nodemailer = require('nodemailer');
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'autojobberhahaha@gmail.com',
+        pass: '1234jobs'
+    }
+});
 //////////////////////////////////////////////////////////////
 var client_stuff = JSON.parse(fs.readFileSync('secret.json'));
 var APIKey = client_stuff.client_id;
@@ -166,7 +173,24 @@ var OauthStep3 = function(request, response, access_token, APICall, callback) {
             });
             // console.log('write');
             setTimeout(() => {
-                data = JSON.parse(data);
+                data = JSON.parse(data).slice(0,10);
+                let emailText = '';
+                data.forEach((job) => {
+                    emailText += job.company + ' ' + job.title + ' ' + 'Description: ' + job.description + ' URL: ' + job.url + '\n\n';
+                });
+                var mailOptions = {
+                    from: 'autojobberhahaha@gmail.com',
+                    to: 'k.h.tracywong@gmail.com',
+                    subject: 'Job Postings from Alexa!',
+                    text: emailText.replace(/<\/?[^>]+(>|$)/g, "")
+                };
+                transporter.sendMail(mailOptions, function(error, info){
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log('Email sent: ' + info.response);
+                    }
+                });
                 displayData += data[0].company + ' ' + data[0].title
                     + ', ' + data[1].company + ' ' + data[1].title + ', '
                     + data[2].company + ' ' + data[2].title;
