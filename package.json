@@ -1,0 +1,19 @@
+{
+  "name": "autojob",
+  "version": "1.0.0",
+  "description": "An Alexa applet to find jobs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nw-hacks-2019/Autojob.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nw-hacks-2019/Autojob/issues"
+  },
+  "homepage": "https://github.com/nw-hacks-2019/Autojob#readme"
+}
