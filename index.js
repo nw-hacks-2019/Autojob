@@ -171,7 +171,7 @@ var OauthStep3 = function(request, response, access_token, APICall, callback) {
                     + ', ' + data[1].company + ' ' + data[1].title + ', '
                     + data[2].company + ' ' + data[2].title;
                 response.end(displayData);
-            }, 2000);
+            }, 4000);
             request.end();
         });
     });
