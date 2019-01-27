@@ -116,7 +116,7 @@ var OauthStep2 = function(request, response, code) {
         console.error("There was an error with our Oauth Call in Step 2: " + e);
         response.end("There was an error with our Oauth Call in Step 2");
     });
-    req.end();å
+    req.end();
 };
 
 //////////////////////////////////////////////////////////////
